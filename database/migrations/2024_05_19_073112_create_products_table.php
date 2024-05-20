@@ -17,7 +17,7 @@ return new class extends Migration
             $table->text('description');
             $table->integer('price')->unsigned()->nullable(false);
             $table->string('image', 255);
-            $table->foreignId('category_id')->constrained('categories')->onDelete('cascade');
+            $table->foreignId('category_id')->constrained()->onDelete('cascade');
             $table->date('expired_at')->nullable(false);
             $table->string('modified_by', 255)->comment('email user');
             $table->timestamps();
